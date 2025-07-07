@@ -1,0 +1,147 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #004d40;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffa726;
+}
+
+nav input[type="text"] {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.intro {
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  border: 0.2cm solid #004d40;
+  margin-left: 1.5cm;
+  margin-right: 1.5cm;
+  padding: 1rem; 
+  border-radius: 6px; 
+}
+
+.intro h2 {
+  margin-bottom: 0.5rem;
+  color: #00796b;
+}
+
+.services-list, .categories {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.service-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+  font-weight: 500;
+}
+
+.categories ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+  line-height: 2;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: #004d40;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Form styles */
+.form-section {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.join-form input,
+.join-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.join-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.join-form button:hover {
+  background-color: #004d40;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav input[type="text"] {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .services-list, .categories {
+    grid-template-columns: 1fr;
+  }
+
+
+
+}

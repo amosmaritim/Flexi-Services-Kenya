@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlexiServices Kenya</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>FlexiServices Kenya</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="join.html">Join as a Professional</a>
+      <a href="booking.html">Book a service now</a>
+
+
+      <input type="text" id="searchBox" placeholder="Search services..." />
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Connecting You to Reliable Local Services</h2>
+      <p class="new">FlexiServices helps you find verified professionals and skilled freelancers for all your daily and event needs.</p>
+      <p class="new">Are you a skilled professional struggling to find consistent work or connect with clients who need your expertise? 
+        FlexiServices is exactly what you need. Our platform is designed to bridge the gap between service providers and 
+        people actively seeking your skills—whether you're a photographer, electrician, plumber, makeup artist, or anything 
+        in between. By joining FlexiServices, you increase your visibility, attract more clients, and grow your career with ease. 
+        Let us help you get discovered by the people who need your services most.</p>
+    </section>
+
+    <section class="services-list" id="serviceContainer">
+      <!-- Services will be dynamically inserted via JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FlexiServices Kenya. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const services = [
+      "Laptop Reapair", "Photographers", "Videographers", "Photo editors", "Graphic designers", "Logo & branding specialists",
+      "Content creators", "Social media managers", "Voice-over artists", "Animators", "Video editors",
+      "Electricians", "Plumbers", "Carpenters", "Painters", "Masonry / Construction", "Interior designers",
+      "Home cleaning services", "Gardeners", "Pest control experts", "Home appliance repair",
+      "Private tutors", "College assignment helpers", "Music teachers", "Art instructors",
+      "Driving school instructors", "Language trainers", "Coding instructors",
+      "Fitness trainers", "Nutritionists", "Yoga instructors", "Massage therapists", "Therapists / Counselors",
+      "First-aid trainers", "DJs", "Event MCs", "Decorators", "Caterers", "Event planners",
+      "Sound system rental", "Tent and chair providers", "Wedding planners", "Makeup artists", "Hair stylists",
+      "Costume providers", "Freelance writers", "Translators", "Web designers", "App developers", "SEO specialists",
+      "Digital marketers", "Resume/CV writers", "Data entry assistants", "Virtual assistants",
+      "Taxi / Boda boda riders", "Movers", "Parcel delivery", "Courier services", "Truck / Lorry rental",
+      "Car hire", "Pet grooming", "Pet sitting", "Dog walking", "Pet training", "Tailors",
+      "Shoe repair", "Custom clothing makers", "Beadwork / Accessories creators", "Personal chefs",
+      "Bakers", "Mobile food vendors", "Juice & smoothie sellers", "Security guard services", "Night watchmen",
+      "CCTV installation experts", "Lock repair & installation", "Phone repair", "Laptop/software troubleshooting",
+      "Printer repair", "Tech setup", "Cyber café operators", "Religious event services", "Fundis",
+      "Farmers delivering produce", "Church/youth MCs", "Typists and printing services"
+    ];
+
+    const container = document.getElementById("serviceContainer");
+    const searchBox = document.getElementById("searchBox");
+
+    function displayServices(list) {
+      container.innerHTML = "";
+      list.forEach(service => {
+        const div = document.createElement("div");
+        div.className = "service-item";
+        div.textContent = service;
+        container.appendChild(div);
+      });
+    }
+
+    searchBox.addEventListener("input", () => {
+      const keyword = searchBox.value.toLowerCase();
+      const filtered = services.filter(service => service.toLowerCase().includes(keyword));
+      displayServices(filtered);
+    });
+
+    displayServices(services);
+  </script>
+</body>
+</html>

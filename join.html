@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join as a Professional - FlexiServices</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f2f2f2;
+    }
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1ebc59;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center">Join FlexiServices as a Professional</h2>
+
+<form id="joinForm">
+  <input type="text" id="name" placeholder="Your Full Name" required />
+  <input type="email" id="email" placeholder="Email Address" required />
+  <input type="tel" id="phone" placeholder="Phone Number" required />
+  <input type="text" id="location" placeholder="Your Location" required />
+  <input type="text" id="service" placeholder="What Service Do You Offer?" required />
+  <textarea id="experience" placeholder="Briefly describe your experience" rows="4"></textarea>
+  <button type="submit">Send via WhatsApp</button>
+</form>
+
+<script>
+  document.getElementById("joinForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const location = document.getElementById("location").value;
+    const service = document.getElementById("service").value;
+    const experience = document.getElementById("experience").value;
+
+    const text = `Hello! I want to join FlexiServices as a professional.%0A
+Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ALocation: ${location}%0AService Offered: ${service}%0AExperience: ${experience}`;
+
+    const phoneNumber = "254714924622";  
+    const url = `https://wa.me/${phoneNumber}?text=${text}`;
+
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>
