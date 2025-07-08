@@ -1,18 +1,19 @@
 const toggle = document.getElementById("darkModeToggle");
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("theme", "dark");
-  } else {
-    localStorage.setItem("theme", "light");
-  }
-});
+    // Optional: Save user preference in localStorage
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
 
-// Load saved preference
-window.onload = () => {
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-  }
-};
+  // Load saved preference
+  window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  };
